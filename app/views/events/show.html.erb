@@ -27,6 +27,6 @@
 
 <%= render 'tickets/form', ticket: Ticket.new(:event_id => @event.id)  %>
 
-<%= render 'tickets/index', tickets: @event.tickets %>
+<%= render 'tickets/showall', tickets: @event.tickets %>
 
 <%= link_to 'Back', events_path %>
