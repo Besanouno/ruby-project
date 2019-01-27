@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  get 'events/create'
   get 'events/index'
   get 'events/new'
 #   get 'events/show'
   get 'events/:id' => 'events#show'
-  resources :events
+  resources :events, :only => [:index, :new, :create, :show]
   root :to => "events#index"
   resources :tickets
   root :to => "tickets#index"
