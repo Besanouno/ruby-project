@@ -1,27 +1,27 @@
 <p id="komunikat"><%= flash[:komunikat] %></p>
 
 <p>
-  <strong>Artist:</strong>
+  <strong>Artysta:</strong>
   <%= @event.artist %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Opis:</strong>
   <%= @event.description %>
 </p>
 
 <p>
-  <strong>Date:</strong>
+  <strong>Data:</strong>
   <%= @event.event_date %>
 </p>
 
 <p>
-  <strong>Price low:</strong>
+  <strong>Cena (min):</strong>
   <%= @event.price_low %>
 </p>
 
 <p>
-  <strong>Price high:</strong>
+  <strong>Cena (max):</strong>
   <%= @event.price_high %>
 </p>
 
@@ -29,4 +29,4 @@
 
 <%= render 'tickets/showall', tickets: @event.tickets %>
 
-<%= link_to 'Back', events_path %>
+<%= link_to 'Wróć', events_path %>

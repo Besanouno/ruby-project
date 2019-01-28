@@ -1,7 +1,7 @@
 <%= form_with(model: event, local: true) do |form| %>
   <% if event.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+      <h2><%= pluralize(event.errors.count, "error") %> Nie można zapisać tego wydarzenia:</h2>
 
       <ul>
       <% event.errors.full_messages.each do |message| %>
@@ -12,31 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :artist %>
+    <%= form.label "Artysta" %>
     <%= form.text_field :artist %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label "Opis" %>
     <%= form.text_area :description %>
   </div>
 
   <div class="field">
-    <%= form.label :price_low %>
+    <%= form.label "Cena (min)" %>
     <%= form.text_field :price_low %>
   </div>
 
   <div class="field">
-    <%= form.label :price_high %>
+    <%= form.label "Cena (max)" %>
     <%= form.text_field :price_high %>
   </div>
 
   <div class="field">
-    <%= form.label :event_date %>
+    <%= form.label "Data" %>
     <%= form.date_field :event_date %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Zapisz" %>
   </div>
 <% end %>

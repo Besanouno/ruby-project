@@ -1,36 +1,36 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Imię i nazwisko:</strong>
   <%= @ticket.name %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>Adres:</strong>
   <%= @ticket.address %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>Cena:</strong>
   <%= @ticket.price %>
 </p>
 
 <p>
-  <strong>Email address:</strong>
+  <strong>Adres e-mail:</strong>
   <%= @ticket.email_address %>
 </p>
 
 <p>
-  <strong>Phone:</strong>
+  <strong>Numer telefonu:</strong>
   <%= @ticket.phone %>
 </p>
 
 <p>
-  <strong>Seat id seq:</strong>
+  <strong>Numer siedzenia:</strong>
   <%= @ticket.seat_id_seq %>
 </p>
 
 <% if @ticket.user == current_user %>
-  <%= link_to 'Edit', edit_ticket_path(@ticket) %>
+  <%= link_to 'Edytuj', edit_ticket_path(@ticket) %>
 <% end %>
-<%= link_to 'Back', tickets_path %>
+<%= link_to 'Wróć', tickets_path %>
