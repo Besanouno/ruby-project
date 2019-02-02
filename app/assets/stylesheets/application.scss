@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+.main-div {
+  background: #ffffff none repeat scroll 0 0;
+  border-radius: 2px;
+  margin: 10px auto 30px;
+  padding: 50px 70px 70px 71px;
+}
+
+.login-form{ text-align:center;}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  padding: 2%;
+  margin: 2%;
+  height: 70px;
+}
+
+a {
+  color: #ef5777
+}
+.event-grid .title {
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: .5px;
+  text-transform: capitalize;
+  margin: 0 0 10px;
+  transition: all .3s ease 0s
+}
+
+.event-grid .description {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  text-transform: capitalize;
+  margin: 0 0 10px;
+  transition: all .3s ease 0s
+}

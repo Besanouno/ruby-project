@@ -1,35 +1,44 @@
 <h1>Bilety</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Imię i nazwisko</th>
-      <th>Adres</th>
-      <th>Cena</th>
-      <th>Adres e-mail</th>
-      <th>Numer telefonu</th>
-      <th>NUmer siedzenia</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container-fluid">
+  <div class="row">
+    <main role="main" class="col-md-8" style="margin: 0 auto;">
+      <div class="table-responsive">
+        <table>
+          <thead>
+          <tr>
+            <th>Imię i nazwisko</th>
+            <th>Adres</th>
+            <th>Cena</th>
+            <th>Adres e-mail</th>
+            <th>Numer telefonu</th>
+            <th>NUmer siedzenia</th>
+            <th colspan="3"></th>
+          </tr>
+          </thead>
 
-  <tbody>
-    <% tickets.each do |ticket| %>
-      <tr>
-        <td><%= ticket.name %></td>
-        <td><%= ticket.address %></td>
-        <td><%= ticket.price %></td>
-        <td><%= ticket.email_address %></td>
-        <td><%= ticket.phone %></td>
-        <td><%= ticket.seat_id_seq %></td>
-        <td><%= link_to 'Szczegóły', ticket %></td>
-        <% if ticket.user == current_user %>
-          <td><%= link_to 'Edytuj', edit_ticket_path(ticket) %></td>
-          <td><%= link_to 'Usuń', ticket, method: :delete, data: { confirm: 'Czy na pewno?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <tbody>
+          <% tickets.each do |ticket| %>
+            <tr>
+              <td><%= ticket.name %></td>
+              <td><%= ticket.address %></td>
+              <td><%= ticket.price %></td>
+              <td><%= ticket.email_address %></td>
+              <td><%= ticket.phone %></td>
+              <td><%= ticket.seat_id_seq %></td>
+              <td><%= link_to 'Szczegóły', ticket %></td>
+              <% if ticket.user == current_user %>
+                <td><%= link_to 'Edytuj', edit_ticket_path(ticket) %></td>
+                <td><%= link_to 'Usuń', ticket, method: :delete, data: {confirm: 'Czy na pewno?'} %></td>
+              <% end %>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+
 
 <br>
