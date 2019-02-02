@@ -9,10 +9,10 @@ class Ticket < ApplicationRecord
   validate :valid_price
   
   def valid_price
-    if event.price_low > price
+    if event != nil and event.price_low > price
       errors.add('Cena biletu', 'jest za niska')
     end
-    if event.price_high < price 
+    if event != nil and event.price_high < price
       errors.add('Cena biletu', 'jest za wysoka')
     end
   end

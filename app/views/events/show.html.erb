@@ -1,32 +1,40 @@
-<p id="komunikat"><%= flash[:komunikat] %></p>
+<div class="card col-lg-4 col-md-4">
+  <p id="komunikat"><%= flash[:komunikat] %></p>
 
-<p>
-  <strong>Artysta:</strong>
-  <%= @event.artist %>
-</p>
+  <p class="lbl">
+    <strong>Artysta:</strong>
+    <%= @event.artist %>
+  </p>
 
-<p>
-  <strong>Opis:</strong>
-  <%= @event.description %>
-</p>
+  <p class="lbl">
+    <strong>Opis:</strong>
+    <%= @event.description %>
+  </p>
 
-<p>
-  <strong>Data:</strong>
-  <%= @event.event_date %>
-</p>
+  <p class="lbl">
+    <strong>Data:</strong>
+    <%= @event.event_date %>
+  </p>
 
-<p>
-  <strong>Cena (min):</strong>
-  <%= @event.price_low %>
-</p>
+  <p class="lbl">
+    <strong>Cena (min):</strong>
+    <%= @event.price_low %>
+  </p>
 
-<p>
-  <strong>Cena (max):</strong>
-  <%= @event.price_high %>
-</p>
+  <p class="lbl">
+    <strong>Cena (max):</strong>
+    <%= @event.price_high %>
+  </p>
 
-<%= render 'tickets/form', ticket: Ticket.new(:event_id => @event.id)  %>
+</div>
 
-<%= render 'tickets/showall', tickets: @event.tickets %>
+<div class="card col-lg-4 col-md-4" style="clear: both">
+  <h2 class="text-label" style="margin-bottom: 5%">Kup bilet</h2>
 
+  <%= render 'tickets/form', ticket: Ticket.new(:event_id => @event.id) %>
+</div>
+
+<div style="clear:both;">
+  <%= render 'tickets/showall', tickets: @event.tickets %>
+</div>
 <%= link_to 'Wróć', events_path %>

@@ -1,7 +1,12 @@
-<h1>Kup bilet</h1>
+<div class="card col-lg-3 col-md-3">
+  <h2 class="text-label" style="margin-bottom: 5%">Kup bilet</h2>
 
-<%= render 'form', ticket: @ticket %>
+  <%= render 'form', ticket: @ticket %>
 
-<%= render 'events/showall', events: Event.all %>
+  <%= link_to 'Wróć', tickets_path %>
 
-<%= link_to 'Wróć', tickets_path %>
+</div>
+
+<div class="card col-lg-8 col-md-8">
+  <%= render 'events/showall', events: Event.all %>
+</div>

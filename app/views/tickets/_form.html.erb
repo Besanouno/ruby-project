@@ -1,12 +1,12 @@
 <%= form_with(model: ticket, local: true) do |form| %>
   <% if ticket.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(ticket.errors.count, "error") %> Nie można zapisać biletu:</h2>
+      <h2>Nie można zapisać biletu:</h2>
 
       <ul>
-      <% ticket.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% ticket.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -52,6 +52,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit "Zapisz" %>
+    <%= form.submit "Zapisz", :class => 'btn-primary' %>
   </div>
 <% end %>

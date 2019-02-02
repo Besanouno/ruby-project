@@ -1,5 +1,6 @@
-<h1>Nowe wydarzenie</h1>
+<div class="card col-md-6 col-lg-6">
+  <h1>Nowe wydarzenie</h1>
+  <%= render 'form', event: @event %>
 
-<%= render 'form', event: @event %>
-
-<%= link_to 'Wróć', events_path %>
+  <%= link_to 'Wróć', events_path %>
+</div>
