@@ -1,7 +1,8 @@
- <%= form_with(model: event, local: true) do |form| %>
+<div style="text-align: left">
+  <%= form_with(model: event, local: true) do |form| %>
     <% if event.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(event.errors.count, "error") %> Nie można zapisać tego wydarzenia:</h2>
+        <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
         <ul>
           <% event.errors.full_messages.each do |message| %>
@@ -12,31 +13,32 @@
     <% end %>
 
     <div class="field">
-      <%= form.label "Artysta" %>
-      <%= form.text_field :artist %>
+      <%= form.label "Artist" %>
+      <%= form.text_field :artist, :class => 'text-input' %>
     </div>
 
     <div class="field">
-      <%= form.label "Opis" %>
-      <%= form.text_area :description %>
+      <%= form.label "Description" %>
+      <%= form.text_area :description, :class => 'text-input' %>
     </div>
 
     <div class="field">
-      <%= form.label "Cena (min)" %>
-      <%= form.text_field :price_low %>
+      <%= form.label "Price low" %>
+      <%= form.text_field :price_low, :class => 'text-input' %>
     </div>
 
     <div class="field">
-      <%= form.label "Cena (max)" %>
-      <%= form.text_field :price_high %>
+      <%= form.label "Price high" %>
+      <%= form.text_field :price_high, :class => 'text-input' %>
     </div>
 
     <div class="field">
-      <%= form.label "Data" %>
-      <%= form.date_field :event_date %>
+      <%= form.label "Date" %>
+      <%= form.date_field :event_date, :class => 'text-input' %>
     </div>
 
     <div class="actions">
-      <%= form.submit "Zapisz" %>
+      <%= form.submit "Save", :class => 'btn-primary' %>
     </div>
   <% end %>
+</div>

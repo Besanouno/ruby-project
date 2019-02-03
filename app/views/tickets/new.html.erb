@@ -1,12 +1,23 @@
-<div class="card col-lg-3 col-md-3">
-  <h2 class="text-label" style="margin-bottom: 5%">Kup bilet</h2>
+<% if @ticket.event_id.nil? %>
+  <div class="card col-lg-3 col-md-3" style="text-align: left;">
+    <h2 class="text-label" style="margin-bottom: 5%">Buy ticket</h2>
 
-  <%= render 'form', ticket: @ticket %>
+    <%= render 'form', ticket: @ticket %>
 
-  <%= link_to 'Wróć', tickets_path %>
+    <%= link_to 'Back', tickets_path %>
 
-</div>
+  </div>
 
-<div class="card col-lg-8 col-md-8">
-  <%= render 'events/showall', events: Event.all %>
-</div>
+  <div class="card col-lg-8 col-md-8">
+    <%= render 'events/showall', events: Event.all %>
+  </div>
+<% else %>
+  <div class="card single-card col-lg-6 col-md-6" style="text-align: left;">
+    <h2 class="text-label" style="margin-bottom: 5%">Buy ticket</h2>
+
+    <%= render 'form', ticket: @ticket %>
+
+    <%= link_to 'Back', tickets_path %>
+
+  </div>
+<% end %>

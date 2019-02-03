@@ -1,7 +1,7 @@
 <%= form_with(model: ticket, local: true) do |form| %>
   <% if ticket.errors.any? %>
     <div id="error_explanation">
-      <h2>Nie można zapisać biletu:</h2>
+      <h2><%= pluralize(ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
 
       <ul>
         <% ticket.errors.full_messages.each do |message| %>
@@ -12,46 +12,50 @@
   <% end %>
 
   <div class="field">
-    <%= form.label "Imię i nazwisko" %>
-    <%= form.text_field :name %>
+    <%= form.label "Name" %>
+    <%= form.text_field :name, :class => 'text-input' %>
   </div>
 
   <div class="field">
-    <%= form.label "Adres" %>
-    <%= form.text_area :address %>
+    <%= form.label "Address" %>
+    <%= form.text_area :address, :class => 'text-input' %>
   </div>
 
   <div class="field">
-    <%= form.label "Cena" %>
-    <%= form.text_field :price %>
+    <%= form.label "Price" %>
+    <%= form.text_field :price, :class => 'text-input' %>
   </div>
 
   <div class="field">
-    <%= form.label "Adres e-mail" %>
-    <%= form.text_field :email_address %>
+    <%= form.label "Email" %>
+    <%= form.text_field :email_address, :class => 'text-input' %>
   </div>
 
   <div class="field">
-    <%= form.label "Telefon" %>
-    <%= form.text_field :phone %>
+    <%= form.label "Phone" %>
+    <%= form.text_field :phone, :class => 'text-input' %>
   </div>
 
   <div class="field">
-    <%= form.label "Numer siedzenia" %>
-    <%= form.text_field :seat_id_seq %>
+    <%= form.label "Seat number" %>
+    <%= form.text_field :seat_id_seq, :class => 'text-input' %>
   </div>
 
   <div class="field">
     <% if ticket.event_id.nil? %>
-      <%= form.label "Wydarzenie" %>
-      <%= form.text_field :event_id %>
+      <%= form.label "Event id" %>
+      <%= form.text_field :event_id, :class => 'text-input' %>
     <% else %>
-      <%= form.hidden_field "Wydarzenie" %>
-      <%= form.hidden_field :event_id %>
-    <% end %>
+      <%= form.hidden_field "Event id" %>
+      <%= form.hidden_field :event_id, :class => 'text-input' %>
+      <p>
+        <strong>Event:</strong>
+        <%= ticket.event.artist %>
+      </p>
+  <% end %>
   </div>
 
   <div class="actions">
-    <%= form.submit "Zapisz", :class => 'btn-primary' %>
+    <%= form.submit "Save", :class => 'btn-primary' %>
   </div>
 <% end %>

@@ -29,7 +29,17 @@
   margin: 2%;
 }
 
+.single-card {
+  float: none;
+  display: inline-block;
+  text-align: left
+}
+
 .text-label {
+}
+
+.text-input {
+  width: 80%;
 }
 
 .lbl {
